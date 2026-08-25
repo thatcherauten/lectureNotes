@@ -309,10 +309,10 @@ Knights ALWAYS tell the truth, and knaves ALWAYS lie.
 
 Who can say, "I'm a knave"?  
 
-Can a knight? 
-Can a knave? 
+Can a knight? would be a lie
+Can a knave? would be true
 
-
+Nobody
 
 //////////////////////////////////////////////////////////
 
@@ -324,7 +324,7 @@ Eve says, "I am a knave or Fred is a knight."
 
 What are Eve and Fred? 
 
-
+They are both knights
 
 
 (what does the "or" mean?)  
