@@ -18,7 +18,8 @@ What is this class?
 
 Syllabus.
 -> office hours
--> getting help
+    Tuesday-Thursday, 3:00-4:30
+-> getting help - Ed Discussion
     extra credit: bug bounty, helping hand
 -> graded work weights/categories
 
