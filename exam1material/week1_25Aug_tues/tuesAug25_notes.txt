@@ -14,20 +14,47 @@ What is this class?
 - basics of proving correctness of programs (why?)
 
 
+-> relevance with AI?
+
 ////////////////////////////////////////////////////////
 
 Syllabus.
--> office hours
--> getting help
+- office hours
+- teaching assistants 
+
+- getting help - Ed Discussion
     extra credit: bug bounty, helping hand
--> graded work weights/categories
+
+- graded work weights/categories
+    -> homework - most Tuesdays (about 12, 30%)
+    -> midterm exams - 3 (45%)
+    -> final exam (25%)
 
 
+
+////////////////////////////////////////////////////////
 
 Policies.
--> homework
--> exams
+-> homework - drop the lowest 2. 
+    submit up to 24 hours late for 10% penalty
+
+-> exams (3 midterms, 1 final)
+    if the score on your final is better than one of your midterms,
+    your final exam will replace the lowest midterm 
+
+    if you miss an exam: if you can coordinate a makeup with me before
+        next class period: you can make it up 
+
+    if you can't make it up, the final will replace it 
+
 -> attendance
+    practice quizzes in Canvas each day
+
+-> AI - help you understand. Whatever you write/submit should be your
+    own work.
+
+
+-> collaboration - submit separately, but fine to work together
 
 
 Course calendar.
@@ -77,11 +104,12 @@ Conclusion: Fred doesn't like pizza.
 
 
 
---> Is this a valid argument? 
+--> Is this a valid argument? yes
 
 
 
 (is there a hidden assumption we're making about Fred?)
+Fred is a person 
 
 
 
@@ -97,15 +125,17 @@ I order fries or I order chips.
 
 
 
-- in English, how do we interpret "or"? 
+- in English, how do we interpret "or"? exclusive
+    without saying, we tend to mean one or the other but not both 
 
 
 
-- in programming? 
+- in programming? || is an inclusive or, would be true if either
+    part (or both!) are true 
+ 
 
 
-
-"Or" in THIS class: 
+"Or" in THIS class: will be inclusive 
 
 
 
@@ -118,7 +148,7 @@ Premise 2: I don't fold the laundry.
 --> What can I conclude? 
 
 
-
+I do the dishes 
 
 //////////////////////////////////////////////////////////
 
@@ -132,7 +162,7 @@ if (num < 4 || x >= 10) {
 
 
 Suppose we know "statement" is executed
---> What can we conclude? 
+--> What can we conclude? x >= 10
 
 
 
@@ -147,10 +177,10 @@ if (num < 4 || x >= 10) {
     }
 }
 
-
+(assume num, x are ints)
 
 Suppose we know "statement" is executed
---> What can we conclude? 
+--> What can we conclude? num is 3
 
 
 
@@ -160,9 +190,9 @@ Suppose we know "statement" is executed
 
 What rule are we seeing with an "or" statement,
 where we know that one of the statements is NOT true?
+(and we know that the or itself is true)
 
-
-
+the other side is true
 
 
 ////////////////////////////////////////////////////////
@@ -172,12 +202,17 @@ Logical Arguments with "IF/THEN" (aka "implies" -> )
 If it is raining, then I will get wet.
 It is raining.
 
---> What can I conclude? 
+--> What can I conclude? I get wet
 
 
 
 
 How to write with -> symbol?
+
+p: it is raining
+q: I get wet 
+
+p -> q
 
 
 
@@ -189,7 +224,7 @@ and we know that the "if" part is true?
     ...what can we always conclude?
 
 
-
+the then part is true 
 
 
 /////////////////////////////////////////////////////////
@@ -197,7 +232,11 @@ and we know that the "if" part is true?
 If I don't hear my alarm, then I will be late for class.
 I am late for class.
 
---> What can I conclude? 
+--> What can I conclude? NOTHING.
+
+I could have heard my alarm but still been late. 
+
+(the if-then promise is only in one direction)
 
 
 /////////////////////////////////////////////////////////
@@ -207,7 +246,7 @@ I hear my alarm.
 
 --> What can I conclude? 
 
-
+NOTHING. Could have been late for other reasons (or not late)
 
 
 
@@ -221,11 +260,17 @@ I'm not late for class.
 --> What can I conclude? 
 
 
+either hear the alarm or didn't hear the alarm 
+CAN'T be the case that I didn't hear my alarm, because this
+    would mean that I was both late and not late
+
+MUST be the case that I heard my alarm.
 
 
 is equivalent to (called the contrapositive):
 
-If p Then q     is equivalent to...
+If p Then q     is equivalent to... If not q Then not p
+
 
 
 
@@ -239,7 +284,9 @@ if (condition) {
 --> what if we know statement is NOT executed? 
 
 
+If condition, Then statement
 
+If Not statement, then not condition 
 
 
 ////////////////////////////////////////////////////////
@@ -254,7 +301,8 @@ if (num < 4 || x >= 10) {
 
 --> suppose y is 17 here. What do we know?
 
-
+NOTHING. y might have been 17 before the if statement, or 
+one of the conditions (or both) in the if might have been true.
 
 /////////////////////////////////////////////////////////
 
@@ -265,6 +313,7 @@ if (num < 4 || x >= 10) {
 }
 
 --> suppose y is 17 here. Can we conclude anything now?
+we know one or both sides of the if was true because y changed to 17
 
 
 //////////////////////////////////////////////////////////
@@ -276,6 +325,10 @@ if (num < 4 || x >= 10) {
 
 --> suppose y is NOT 17 here. What do we know?
 
+num < 4 || x >= 10 was false
+
+both conditions false
+num >= 4 AND x < 10
 
 ///////////////////////////////////////////////////////
 
@@ -300,8 +353,10 @@ Knights ALWAYS tell the truth, and knaves ALWAYS lie.
 
 Who can say, "I'm a knave"?  
 
-Can a knight? 
-Can a knave? 
+Can a knight? would be lie, can't do
+Can a knave? would be true, can't do
+
+No one can say that 
 
 
 
@@ -313,15 +368,25 @@ Eve says, "I am a knave or Fred is a knight."
 
 
 
-What are Eve and Fred? 
+What are Eve and Fred? both knights
+
+Suppose Eve is a knave. Not possible - this would make her full
+    statement true.
+
+Suppose instead Eve is a knight. Then Fred is also a knight - this
+    would make her full statement true. 
 
 
 
 
-(what does the "or" mean?)  
+(what does the "or" mean?)  inclusive
 
 
 (Remember that we consider the WHOLE statement at once)
+
+/////////////////////////////////////////////////////////
+
+<-- stopped here, will continue Thursday
 
 /////////////////////////////////////////////////////////
 
