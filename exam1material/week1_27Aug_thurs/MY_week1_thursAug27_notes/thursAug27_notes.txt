@@ -43,9 +43,17 @@ else {
 
 
 
---> is it possible for "statements2" to execute?7
+--> is it possible for "statements2" to execute?
 
+first if condition has to be false
+x >= 3 && y <= 4
 
+the first else if condition has to be true
+x < 5 && y == 7
+
+since y would have to be less than or equal to 4 to fulfill the false requirement
+for the first conditional but equal 7 to fulfill the true requirement of the
+second conditional, statements2 will never execute
 
 
 ////////////////////////////////////////////////////////
@@ -63,14 +71,23 @@ Bob says, "Neither Ava nor I are knaves."
 
 
 What does "neither" mean?
-
+both false
 
 Rewrite Bob:
-
+Ava is a knight and I am a knight
 
 What are Ava and Bob? 
+Suppose Ava is a knight:
+    From her statement, Bob would have to be a knave
+    Then Bob's statement is correctly false; they arent both knights
 
+Suppose Ava is a knave:
+    From her statement, Bob would have to be a knight.
+    Then Bob's statement would be a lie since they couldn't both be knights, which doesnt work
 
+Therefore:
+    Ava is a knight and Bob is a knave
+    
 ////////////////////////////////////////////////////////
 
 You meet three inhabitants: Sarah, Bill and Mae.
@@ -83,9 +100,20 @@ What types are Sarah, Bill, and Mae?
 
 
 (How might we simplify everything?)
+Sarah rewritten: Bill is a knight
+Bill rewritten: Mae is a knight
+Mae rewritten: Bill would tell you that I am a knave.
 
+Suppose Sarah is a knight:
+    From her statement, Bill is a knight, and from his statement, Mae is a knight.
+    Mae's statement doesn't work; Bill (a knight) would not say Mae is a knight.
 
-    
+Suppose Sarah is a knave:
+    From her statement, Bill is a knave, and from his statement, Mae is a knave.
+    Mae's statement would now work; Bill (a knave) lies that Mae is a knave, but
+    Mae then lies about what Bill would say. The lies negate each other.
+
+Therefore, Sarah is a knave, Bill is a knave, and Mae is a knave
 
 
 ////////////////////////////////////
@@ -102,6 +130,12 @@ Unicorn says: "Yesterday was one of my lying days, too."
 
 What day is it?
 
+Suppose Lion is telling the truth:
+    It would have to be Thursday, since the only Lion-truth day preceded by a Lion-false day is Thursday.
+    Unicorn lies on Thursdays and tells the truth on Wednesdays, so therefore yesterday would be a
+    Unicorn-truth day, but Unicorn would SAY that yesterday was a Unicorn-false day.
+
+Therefore, it is Thursday.
 
 
 ////////////////////////////////
@@ -121,10 +155,8 @@ The second one says: "I'm Tweedledee."
 
 Which is which? What day is it?
 
-
-
-
-
+Can't be a day when one lies and one tells the truth; they would give the same name.
+Therefore, the first is Tweedledum, the second is Tweedledee, and it is Sunday.
 
 
 
@@ -152,7 +184,19 @@ The second one says: "I'm Tweedledee!"
 
 Who gets the rattle?
 
+Suppose the first twin is telling the truth: Tweedledee owns the rattle,
+    the second twin must be lying, and so the second twin is Tweedledum.
+    This makes the first twin Tweedledee, who owns the rattle.
+
+Suppose instead the first twin is lying: Tweedledum owns the rattle,
+    the second twin must be telling the truth, and so the second twin is Tweedledee.
+    This makes the first twin Tweedledum, who owns the rattle.
+
+Therefore, the first twin gets the rattle.
+
 Who is who?
+
+Not enough information
 
 
 ///////////////////////////////////////////
@@ -171,8 +215,24 @@ Lead casket: "The portrait is not in the gold casket."
 
 Where is the portrait?
 
+Suppose the portrait is in the Gold casket:
+    Gold: truth
+    Silver: truth
+    too many truths already; doesn't work
 
+Suppose the portrait is in the Silver casket:
+    Gold: false
+    Silver: false
+    Lead: truth
+    this could be correct
 
+Suppose the portrait is in the Lead casket:
+    Gold: false
+    Silver: truth
+    Lead: truth
+    doesn't work
+
+Therefore, the portrait is in the Silver casket
 
 
 
