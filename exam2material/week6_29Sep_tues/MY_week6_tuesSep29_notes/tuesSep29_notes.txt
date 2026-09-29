@@ -20,7 +20,13 @@ p → q   equivalent to   ¬p ∨ q
 
 
 p → q  ⊢  ¬p ∨ q
+    tried PbC
+    assume ( !(!p | q) )
+        can we get !p | q
+        try negI to get !p
+            assume p
 
+    goal: get a contradiction
      
 
 
@@ -41,6 +47,10 @@ HW 4 problem 7
 
 
 ¬(p → q)  ⊢  p ∧ ¬q
+    try PbC, assume !(p & q)
+        goal: contradiction
+        try to get p -> q to contradict with the premise
+            use ImplyI to try to get it
 
 
 
@@ -62,37 +72,48 @@ How do we approach proofs?
 3. Look at what you are trying to prove 
     (what do we look for in goal/conclusion?)
 
-    ∧ - 
+    ∧ - try AndI (think of two sides as separate proofs)
 
-    ∨ -   
+    ∨ - try to get one of the sides, do OrI
+      - often have another OR statement: do OrE
+      - then try PbC
 
-    → - 
+    → - ALWAYS follow ImplyI pattern
 
-    ¬(something) - 
+    ¬(something) - ALWAYS follow NegI pattern
 
     just a propositional atom? like p.
+        - first, try to find the atom in the premises
+        - see if you have an OR, try OrE
+        - if nothing else workds, try PbC
 
-
-After each claim - 
+After each claim - scan previous claims, see if we can extract more information
 
 
 
 Inside a subproof - 
     (What are the different subproofs?)
+        OrE - both SubProofs need same conclusion
+        ImplyI - assume LHS, end with RHS
+        NegI - end with Contradiciton
+        PbC - end with Contradiction
 
     --> when do we open a subproof?
 
     --> can we assume anything in a subproof? 
+        Assume ( anything )
 
-
+        always write goal for the subproof as a note
+            focus on proving THAT statement, maube with nested subproofs
 
 
 Doesn't fit a pattern or doesn't work out from above?
-
+    PbC
 
 
 When to use BottomE?
-
+    get a Contradiction (F), conclude anything
+    use very rarely
 
 
 
@@ -113,14 +134,14 @@ p ∨ ¬p
 
 
 What would a theorem be in a truth table?
-
+tautology
 
 
 
 Prove LEM (lem.sc):
 
 ⊢ ( p ∨ ¬p )               //lem.sc
-
+    
 
 
 ⊢ (theorem that you are trying to prove)
