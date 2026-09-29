@@ -4,12 +4,10 @@ import org.sireum._
 import org.sireum.justification._
 import org.sireum.justification.natded.prop._
 
-@pure def not2(p: B, q: B, r: B): Unit = {
+@pure def lem(p: B): Unit = {
   Deduce(
-    ( !p & !q ) |- ( !(p | q)  )
+    |- ( p | !p )
       Proof(
-        1 (  !p & !q ) by Premise,
-
-    )
+        
   )
 }
