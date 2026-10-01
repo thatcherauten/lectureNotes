@@ -153,25 +153,24 @@ SOUNDNESS and COMPLETENESS of natural deduction in
     "true": demonstrate an argument with truth tables
 
 
-SOUNDNESS: if all arguments that are provable are actually true 
+SOUNDNESS: ??
 
 p ∧ q 
 --------
 p
 
 
-COMPLETENESS: if all true arguments are provable 
+COMPLETENESS: ??
 
 
 
 
 
 --> what would it mean if a proof system was unsound?
-    it would mean I could prove untrue things....baaaad
+
 
 
 --> what would it mean if a proof system was incomplete?
-    ok...would mean there were true arguments I couldn't prove
 
 
 
@@ -207,9 +206,9 @@ A set is an unordered collection of elements
 
 ∈: is in, exists in
 
-    x ∈ A  means? x exists (is an element in) set A
+    x ∈ A  means?
 
-    x ∉ A  means? x does not exist (is not an element in) set A
+    x ∉ A  means?
 
 
 
@@ -222,16 +221,14 @@ Example: A = {1,4,7,11,20}
 
 - Common sets in math:
 
-    ℕ: natural numbers (integers 1 and bigger)
-    ℤ: whole numbers (all integers)
-    ℚ: rational numbers (written as a fraction)
-    ℝ: real numbers (can be represented on the number line)
-    ℂ: complex numbers (can be written as a + bi)
-    ∅: empty set, {}
+    ℕ: 
+    ℤ: 
+    ℚ: 
+    ℝ: 
+    ℂ: 
+    ∅: 
 
 ℕ ⊂ ℤ ⊂ ℚ ⊂ ℝ ⊂ ℂ
-
-⊂: subset 
 
 ////////////////////////////////////
 
