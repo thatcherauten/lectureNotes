@@ -44,40 +44,44 @@ Write each statement in English. Is each one true or false?
 
 ¬(∀ x (Carnivore(x) → Mammal(x)))
 
-
-
+Not all carnivores are mammals
+true: falcon
 
 ///
 
 ∀ x ¬Wings(x)
 
-
-
+All animals do not have wings
+false: bat
 
 ///
 
 ¬(∃ x Fish(x))
 
-
+It's not the case that some animal is a fish
+there doesn't exist an animal that is a fish
+false: salmon
 
 ///
 
 ∃ x ¬(Fish(x))
+Some animal is not a fish
 
+true: bat
 
 
 ///
 
 ¬(∃ x (Mammal(x) ⋀ Wings(x)))
 
-
-
+There is not some mammal that has wings
+false: bat
 
 ///
 
 ∃ x (Fish(x) → Bird(x))
 
-
+if an animal is a fish, then it is a bird
 
 
 /////////////////
