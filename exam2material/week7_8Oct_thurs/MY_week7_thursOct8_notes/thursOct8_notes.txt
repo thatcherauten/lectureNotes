@@ -68,13 +68,13 @@ Domain: students
 
 A 5th grade prize winner isn't friends with anyone
 
-translation: 
+translation: ∃ x ∀ y (in5th(x) & wonPrize(x) & !friendsWith(x, y))
 
 negate:
 
+∀ x ∃ y (in5th(x) & wonPrize(x) & friendsWith(x, y))
 
-
-translation of negation: 
+translation of negation: all 5th grade prize winners have at least one friend
 
 
 ////////////////////////////////
@@ -101,7 +101,7 @@ Examples -- are the following arguments valid?
 Premises: ∀ x (P(x) → Q(x)), ∃ x P(x)
 Conclusion: ∃ x Q(x)
 
-Valid or not? 
+Valid or not? yes
 
 
 ///
@@ -109,7 +109,7 @@ Valid or not?
 Premises: ∀ x P(x) : everyone in my domain is P-ish
 Conclusion: ∃ x P(x): there is someone in domain who is P-ish
 
-Valid or not? 
+Valid or not? not true if domain is empty
 
 /////////////////////////////////
 
@@ -141,7 +141,7 @@ In Logika, ∃ x P(x) is written as:
 
 
 
---> what is "T"?
+--> what is "T"? the domain
 
 
 Settings->Command Palette->Tasks (run task)->Sireum slang template->
@@ -218,7 +218,7 @@ Syntax:
 
 Proof(
     1 ( ∀ ((x: T) => Human(x)) )    by Premise,
-    2 Human(Socrates)               by ???
+    2 ( Human(Socrates) )           by AllE[T](1)
 )
 
 Note: This assumes "Socrates" and "Human" were both parameters
