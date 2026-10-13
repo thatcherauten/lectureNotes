@@ -32,13 +32,25 @@ Today:
 Reminder:
 
 AllE - when can we use?
-
+    need a for all statement
+         an individual of that type
+            might be a parameter to proof function (or named in a premise)
+            might be an individual named inside a let subproof
 
 AllI - when do we use? idea?
+    when our goal is a for all statement
+    subproof (a "let") where we name a random individual, like 'a'
+        goal: get our statement about that individual
+    afterward, make same claim with a for-all statement (must be true for everyone in domain)
 
 ////////////////////////
 
 Bigger example: allBig.sc
+
+ExistsI: use when we have a statement about a particular individual
+        create a seimilar Exists statement since it was true for someone
+
+        no subproofs
 
 ////////////////////////
 
