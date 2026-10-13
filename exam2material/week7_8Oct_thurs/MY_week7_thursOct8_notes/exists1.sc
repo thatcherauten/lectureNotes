@@ -21,7 +21,9 @@ import org.sireum.justification.natded.prop._
       3 ( Human(Socrates) __>: Mortal(Socrates) ) by AllE[T](1),
       4 ( Mortal(Socrates) ) by ImplyE(3, 2),
       5 ( ∃ ((x: T) => Mortal(x)) ) by ExistsI[T](4)
-      
+      3 ( Human(Socrates) __>: Mortal(Socrates) ) by AllE[T](1),
+      4 ( Mortal(Socrates) ) by ImplyE(3, 2),
+      5 ( ∃ ((x: T) => Mortal(x)) ) by ExistsI[T](4)
     )
   )
 }
