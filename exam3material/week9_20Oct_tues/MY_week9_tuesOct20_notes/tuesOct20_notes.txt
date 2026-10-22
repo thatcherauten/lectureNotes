@@ -123,29 +123,34 @@ Proof tactics for predicate logic
 - see if you can do anything right away with the premises
     Which rules? 
 
-        Have an AND? 
-        have an implies at the LHS? 
-        Have a for all and an individual? 
+        Have an AND? split it, AndE
+        have an implies at the LHS? ImplyE
+        Have a for all and an individual? AllE, plug them in
 
 
 - look at top-level operator for what you are trying to prove
     trying to prove a "for all" statement with ∀?
 
+    use AllI subproof
 
 
     trying to prove a "there exists" statement with ∃?
 
         do I have that statement about a particular individual?
-
+            ExistsI
 
         could I use AllE for an individual with an all statement?
-
+            use AllE to make the statement about the individual
+            then use ExistsI
 
         do I have a "there exists" statement as a claim?
+            already have Exists (given)
+            try to prove Exists (something)
 
+            try using ExistsE on the Exists you already have
 
         do I have an OR statement as a claim?
-
+            try OrE, prove the Exists
 
         really can't find anything? 
             PbC
