@@ -49,18 +49,38 @@ Steps for an induction proof?
 
 Example: Prove that the sum of the first n odd numbers is n^2.
 
-    (what is our domain?)
+    (what is our domain?) natural numbers
+
+    base case would be the sum of the first one odd number.
 
 
 How can we express the sum of the first n odd numbers more formally?
 
-
+In general:
+            1 + 3 + 5 + ... + (2n-1) = n^2
 
 So, what is our claim?
-
+            1 + 3 + 5 + ... + (2n-1) = n^2
 
 
 Proof by induction.
+
+Base case: We must prove that our claim holds for the smallest natural number, n = 1.
+We have that 1 = 1^2, so the base case holds.
+
+Inductive step: We assume the inductive hypothesis, that:
+    1 + 3 + 5 + ... + (2k-1) = k^2
+for some fixed natural number k. We must show that:
+    1 + 3 + 5 + ... + (2k-1) + (2(k+1) - 1) = (k+1)^2
+
+We have that:
+    1 + 3 + 5 + ... + (2k-1) + (2(k+1) - 1) = k^2 + (2(k+1) - 1) (by inductive hypothesis)
+                                            = k^2 + 2k + 2 -1
+                                            = k^2 + 2k + 1
+                                            = (k+1)^2
+
+Thus, we have shown with induction that for all natural numbers n, 
+    1 + 3 + 5 + ... + (2n-1) = n^2
 
 
 /////////////////////////////////
@@ -68,7 +88,18 @@ Proof by induction.
 Bad induction, example 1.
 
 Use induction to prove that in any nonempty set of n horses, 
-all horses are the same color.
+all horses in that set are the same color.
+
+domain: natural numbers
+
+Base case: We must prove that our claim holds for the smallest natural number, n=1.
+            We have that for a set of 1 horse, all horses would have the same color
+            (because there is only one horse).
+
+Inductive Step: We assume the inductiv hypothesis, that in any set of k horses, where k is a natural number, 
+                that all k horses have the same color. We must show that if we have a set of k+1 horses,
+                that all those horses have the same color.
+
 
 
 //////////////////////////////////
@@ -123,10 +154,10 @@ g(n) = n * g(n-1), for n > 1
 
 n  | g(n)
 ---------
-1  | 
-2  | 
-3  | 
-4  | 
+1  | 1
+2  | 2
+3  | 6
+4  | 24
 
 
 
@@ -140,8 +171,8 @@ Write a recursive definition.
 
 Over natural numbers.
 
-Base case?
-Recursive case?
+Base case?          f(1) = 1
+Recursive case?     f(n) = f(n-1) + (n-1), n > 1
 
 
 
@@ -173,7 +204,8 @@ Recursive case: x ∈ S ⋀ y ∈ S → xy ∈ S
 ///////////////////////////////
 
 Write a recursive definition for the set S = {1, 3, 5, 7, ...}
-
+Base case: 1 ∈ S
+Recrusive Case: x ∈ S → x + 2 ∈ S
 
 
 ////////////////////////////////
