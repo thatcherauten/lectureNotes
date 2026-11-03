@@ -7,16 +7,27 @@ irrational number is irrational.
 
 How to write as an IF/THEN?
 
-
+If we have a rational number r and an irrational number i,
+then we promise that r+i is irrational.
 
 
 Rational definition?
-
+    a number x is a rational if x = p/q where p and q are integers and q != 0
 
 
 
 How to start the proof? 
+    Let r be a rational number and let i be an irrational number.
+    Assume, for the sake  of contradiction, that i+r is rational.
 
+    Since r is rationa, r = p/q where p and q are integers and q != 0.
+    Since i+r is rational, i+r = a/b where a and b are integers and b != 0.
+
+    i = (i+r) - r
+      = a/b - p/q
+      = (aq-pb)/bq
+
+    (want a contradiction)
 
 
 
@@ -39,13 +50,14 @@ Proofs with sets.
 Prove that A ⊆ B?
     --> how would we express this in predicate logic?
 
-
+        everything in A is also in B
 
     --> proof template? 
 
-
-
-
+        pick a random individual, maybe x
+            assume x is in A
+            ...
+            prove x is in B
 
 
 Prove that A = B?
@@ -60,13 +72,22 @@ Prove that {x : x = 4k + 2, k ∈ ℤ} ⊆ {x : x = 2a, a ∈ ℤ}
 A = {x : x = 4k + 2, k ∈ ℤ} 
 B = {x : x = 2a, a ∈ ℤ} 
 
-A: what elements?  
+A: what elements?  every other even number (just the evens indivisible by 4)
 
 
-B: what elements? 
+B: what elements? even numbers
 
 
 Proof that A ⊆ B.
+
+    Let x be an element in A. Then x = 4k+2 where k ∈ ℤ.
+
+    We have that:
+        x = 4k + 2
+          =2(2k + 1)
+
+    Thus, x = 2a, where a is the integer 2k+1, and so x is in B
+
 
 
 
@@ -156,10 +177,10 @@ Then: prove program correctness in "auto" mode
 
 ////////////////////////
 
-Preconditions: ?
+Preconditions: ? assumptions that the program or function needs in order to fulfill its requirements.
 
 
-Postconditions: ?
+Postconditions: ? what we are trying to show a function or program does
 
 
 /////
