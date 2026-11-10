@@ -18,10 +18,18 @@ def getTicketCosts(adult: Z, kid: Z): Z = {
   //what to do here?
 
 
+
+
   //get the total ticket cost
   val overall: Z = adult*50 + kid*30
 
   //what to do here?
+  Deduce (
+    1 ( overall == adult * 50 + kid * 30 ) by Premise,
+    2 ( adult >= 0 ) by Premise,
+    3 ( kid >= 0 ) by Premise,
+    4 ( overall >= 0 ) by Algebra*(1, 2, 3)
+  )
 
   return overall
 }
@@ -32,9 +40,23 @@ val k: Z = 3 //$30 each
 val a: Z = 2 //$50 each
 
 //what to do here?
+Deduce (
+  1 ( k == 3 ) by Premise,
+  2 ( a == 2 ) by Premise,
+  3 ( a >= 0 ) by Algebra*(2),
+  4 ( k >= 0 ) by Algebra*(1)
+)
 
 val cost: Z = getTicketCosts(a, k)
 
 //what to do here?
+Deduce (
+  1 ( cost == a * 50 + k * 30 ) by Premise,
+  2 ( cost >= 0 ) by Premise,
+  3 ( a == 2 ) by Premise,
+  4 ( k == 3 ) by Premise,
+  5 ( cost == 190 ) by Algebra*(1, 3, 4)
+)
 
 //what *should* cost be?
+assert(cost == 190)

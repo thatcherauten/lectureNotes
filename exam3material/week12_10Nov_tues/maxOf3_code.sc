@@ -22,10 +22,16 @@ if (a >= b) {
     max = a
 
     //what do we need to show here?
+    Deduce (
+
+    )
   } else {
     max = c
 
     //what do we need to show here?
+    Deduce (
+
+    )
   }
   //what do we put here?
 } else {
@@ -33,20 +39,34 @@ if (a >= b) {
     max = b
 
     //what do we need to show here?
+    Deduce (
+
+    )
   } else {
     max = c
 
     //what do we need to show here?
+    Deduce (
+      
+    )
   }
 
   //what goes here?
 }
 
 //what goes here?
+Deduce (
+
+)
 
 println("Max between ", a, ", ", b, " and ", c, " is ", max)
 
 //How do we know we have the max?
 //what assert(s) do we want?
+
+assert(max >= a)
+assert(max >= b)
+assert(max >= c)
+assert(max == a | max == b | max == c)
 
 //where do we need to prove the asserts?
