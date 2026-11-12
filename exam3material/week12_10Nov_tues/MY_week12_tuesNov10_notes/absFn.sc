@@ -72,7 +72,7 @@ Deduce (
     10 ( answer == 4 ) by BottomE(9)
   )
 
-  11 ( answer == 4 ) by 
+  11 ( answer == 4 ) by 8
 )
 
 
