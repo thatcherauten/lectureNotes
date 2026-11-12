@@ -56,10 +56,11 @@ while (condition) {
 }
 
 
-<-- what do we know here?
+<-- what do we know here? condition == false
 
 <-- why is this more challenging than if-statements?
 
+loop invariant: describe what happens in a loop in terms of the statements being done
 
 //////////////////////////////
 
