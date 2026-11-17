@@ -21,17 +21,21 @@ def mult(x: Z, y: Z): Z = {
   Deduce(
     1 ( total == 0 ) by Premise,
     2 ( i == 0 ) by Premise,
-    3 ( total == i*x ) by Algebra*(1,2) //proves the invariant
+    3 ( total == i*x ) by Algebra*(1,2), //proves the invariant
     //need: total == i*x (the invariant)
+
+    4 ( y >= 0 ) by Premise,
+    5 ( i <= y ) by Algebra*(2, 4)
   )
 
-  while (i != y) {
+  while (i < y) {
     //what goes here?
     Invariant(
       //first list the variables that are changing
       Modifies(total, i),
       //now list the invariants
-      total == i*x
+      total == i*x,
+      i <= y
     )
 
     //could list the invariant as a premise
@@ -52,8 +56,11 @@ def mult(x: Z, y: Z): Z = {
       3 ( Old(i) == i - 1 ) by Algebra*(1),
       4 ( total == (i-1)*x + x ) by Algebra*(2,3),
       5 ( total == i*x - x + x ) by Algebra*(4),
-      6 ( total == i*x ) by Algebra*(5) //proves invariant still true
+      6 ( total == i*x ) by Algebra*(5), //proves invariant still true
       //goal: total == i*x
+
+      7 ( Old(i) < y ) by Premise,
+      8 ( i <= y ) by Algebra*(1, 7)
     )
 
     //what should we be able to assert here?
@@ -62,10 +69,11 @@ def mult(x: Z, y: Z): Z = {
   }
 
   Deduce(
-    1 ( !(i != y) ) by Premise, //loop condition is false
-    2 ( i == y ) by Algebra*(1),
-    3 ( total == i*x ) by Premise, //loop invariant is true
-    4 ( total == x*y ) by Algebra*(2,3) //proves postcondition
+    1 ( !(i < y) ) by Premise, //loop condition is false
+    2 ( i <= y ) by Premise,
+    3 ( i == y ) by Algebra*(1, 2),
+    4 ( total == i*x ) by Premise, //loop invariant is true
+    5 ( total == x*y ) by Algebra*(3,4) //proves postcondition
   )
 
   //what do we need here?
